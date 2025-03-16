@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+
+:root {
+    --bg-color: rgb(0, 0, 0);
+    --text-color: rgb(255, 255, 255);
+  }
+  
+  [data-theme="dark"] {
+    --bg-color: rgb(255, 247, 247);
+    --text-color:rgb(0, 0, 0);
+  }
+  body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.5s ease, color 0.5s ease;
+  }
+  .menu{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.5s ease, color 0.5s ease;
+  }
+/* src/index.css */
+
+/* Chatbot Container */
+.chatbot-container {
+
+  border-radius: 1rem; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 1.0rem; /* Padding around the chatbot */
+  max-width: 700px; /* Maximum width for the chatbot */
+  width: 100%; /* Full width */
+  margin: 0 auto; /* Center the container */
+  overflow-y: auto; /* Scrollable container if chat grows too large */
+  height: 400px; /* Set a height limit */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+   /* Light background color */
+}
+
+/* User Message */
+.user-message {
+   /* Light blue for user messages */
+  color: #00796b; /* Darker text for contrast */
+  padding: 0.75rem 1rem; /* Padding for better spacing */
+  border-radius: 1rem; /* Rounded corners */
+  max-width: 80%; /* Maximum width for user messages */
+  align-self: flex-end; /* Align messages to the right */
+  box-shadow: 0 2px 4px rgba(244, 141, 141, 0.1); /* Light shadow */
+}
+
+/* Bot Message */
+.bot-message {
+ /* Light gray for bot messages */
+/* Darker text for contrast */
+  padding: 0.75rem 1rem; /* Padding for better spacing */
+  border-radius: 1rem; /* Rounded corners */
+  max-width: 90%; /* Maximum width for bot messages */
+  align-self: flex-start; /* Align messages to the left */
+  box-shadow: 0 2px 4px rgb(61, 104, 104); 
+  
+}
+.bot-message2 {
+  /* Light gray for bot messages */
+ /* Darker text for contrast */
+   padding: 0.50rem 0.25rem; /* Padding for better spacing */
+   border-radius: 0.5rem; /* Rounded corners */
+   max-width: 90%; /* Maximum width for bot messages */
+   align-self: flex-start; /* Align messages to the left */
+   /* Light shadow */
+ }
+
+/* Input Container */
+.input-container {
+  display: flex;
+  width: 100%;
+  max-width: 600px; 
+  margin-top: 1rem;
+  gap: 1rem;
+  padding: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Input Field */
+.input-field {
+  width: 90%; /* Take most of the space */
+  padding: 0.75rem 1rem; /* Comfortable padding */
+  border-radius: 1rem; /* Rounded corners */
+  border: 1px solid #ccc; /* Light border */
+  font-size: 1rem; /* Slightly larger font size */
+  outline: none;
+  transition: border-color 0.3s ease; /* Smooth transition for border */
+}
+
+.input-field:focus {
+  border-color: #00796b; /* Highlight border color when focused */
+  box-shadow: 0 0 0 2px rgba(0, 121, 107, 0.3); /* Light green glow */
+}
+
+/* Send Button */
+.send-button {
+  background-color: #00796b; /* Green background */
+  color: #ffffff; /* White text */
+  padding: 0.75rem 1.5rem; /* Padding for button */
+  font-size: 1rem; /* Medium font size */
+  border-radius: 1rem; /* Rounded corners */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Pointer cursor for the button */
+  transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+.send-button:hover {
+  background-color: #004d40; /* Darker green on hover */
+}
+
+.send-button:disabled {
+  background-color: #ccc; /* Disabled button style */
+  cursor: not-allowed; /* Show not-allowed cursor when disabled */
+}
+
+
+
