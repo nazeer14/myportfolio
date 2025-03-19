@@ -23,21 +23,13 @@ function Home() {
       </div>
       <div>
         
-        <p className='p-4 m-2 text-2xl '>Hello! I'm Nazeer, a passionate and motivated <span className='text-red-500 font-bold'>Full Stack Java Developer </span>with a background in Computer Science and Engineering (CSE). 
+        <p className='p-4 m-2 text-2xl '>Hello! I'm Nazeer, a passionate and motivated <span className='text-red-500 text-3xl font-bold'>Full Stack Java Developer </span>with a background in Computer Science and Engineering (CSE). 
         I graduated in 2024, and now I’m excited to dive into the tech world, 
          bringing my skills and enthusiasm for building innovative software solutions.</p><br/>
       </div>
     
     </div>
-    <p className='text-2xl p-5'>
-      I specialize in both frontend and backend development, with proficiency in <span className='text-red-500 font-bold'> Java, Spring Boot, JSP, HTML, CSS, JavaScript, and React.js. </span> 
-      I am well-versed in crafting responsive, user-friendly applications and connecting them seamlessly to powerful backend services.<br/><br/>
-
-Though I’m a fresher, my dedication to learning and hands-on experience during my academic journey has given me a solid foundation. 
-I’m eager to contribute my skills to a dynamic team and take on challenging real-world projects.<br/><br/>
-
-I’m looking for opportunities to grow as a developer, collaborate with like-minded professionals, and make an impact in the world of software development.</p>
-      
+    
     </div>
     </motion.div>
       <motion.div

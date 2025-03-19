@@ -27,7 +27,7 @@ const certificates = [
 
 const Certificates = () => {
   return (
-    <div className="menu min-h-screen m-10 bg-black p-8 rounded-2xl border-1 shadow-xl shadow-blue-600 hover:shadow-emerald-400">
+    <div className="menu min-h-screen m-2 bg-black p-8 rounded-2xl border-1 shadow-xl shadow-blue-600 hover:shadow-emerald-400">
       <h1 className="text-4xl font-bold text-center mb-12 ">
         My Certificates
       </h1>
