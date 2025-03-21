@@ -18,7 +18,7 @@ function OraAI() {
       try {
        
         const genAI = new GoogleGenerativeAI(
-            "AIzaSyBVjhGgc2u5T5xwj1kVN5SSVFs3Z6tOjZA"
+            "Google API key"
         )
 
        
