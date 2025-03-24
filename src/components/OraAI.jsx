@@ -53,9 +53,10 @@ function OraAI() {
         {chatHistory.map((val, i) => (
           <div key={i} className="message-box">
             <p className="user-message font-bold border-1 border-purple-400 mb-2">{val.userText}</p>
-            {val.aiText && <h2 className="bot-message border-1 border-gray-500 ">{val.aiText}</h2>}
-            
-            
+            {val.aiText && <h2 className="bot-message border-1 border-gray-500 ">
+              {val.aiText}
+              </h2>}
+    
           </div>
         ))}
       </div>
