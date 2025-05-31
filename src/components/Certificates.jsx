@@ -6,8 +6,8 @@ const certificates = [
     title: "React Developer Certificate",
     issuer: "Naresh IT",
     date: "January 2025",
-    image: "null", // Replace with your certificate image URL
-    link: "#", // Replace with the actual certificate link
+    image: "null", 
+    link: "#", 
   },
   {
     title: "Web Developer",
@@ -18,8 +18,8 @@ const certificates = [
   },
   {
     title: "Full Stack Development",
-    issuer: "freeCodeCamp",
-    date: "March 2024",
+    issuer: "Naresh iT",
+    date: "March 2025",
     image: "null",
     link: "#",
   },

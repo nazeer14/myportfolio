@@ -1,74 +1,105 @@
-import React,{useState} from 'react'
-import { Link } from 'react-router-dom'
-import profilephoto from '../images/profilephoto.jpg'
-import './head.css'
-import FallingHearts from './FallingHearts'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import profilephoto from '../images/profilephoto.jpg';
 
 function Header() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState('light');
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-    document.documentElement.setAttribute("data-theme", theme);
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
   };
 
-  //likes
-  const [showHearts, setShowHearts] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(false); 
-  
   const handleLike = () => {
-    setShowHearts(true);
     setShowThankYou(true);
-    
     setTimeout(() => {
-      setShowHearts(false);
       setShowThankYou(false);
     }, 1000);
   };
 
-  const Button = ({ onClick, children }) => (
-    <button onClick={onClick} className=" ">
-      {children}
-    </button>
-  );
-  
-  const Like = ({ onLike }) => (
-    <div className="lg:text-2xl items-center lg:pt-0 pt-2 ">
-      <Button onClick={onLike} className=""><span className='lg:text-2xl  hover:text-red-500'>Like</span>❤️</Button>
-    </div>
-  );
-  
   return (
-    <>
-    <div  >
-      <nav className='div flex lg:gap-28  lg:justify-around lg:pr-30  justify-around border-2  border-cyan-800 bg-white rounded-3xl py-1 mt-2 lg:font-bold'>
-        <Link to='' ><img src={profilephoto} alt='photo' className='h-11 rounded-4xl w-11'/></Link>
-        <Link to='' className='hover:text-blue-500 lg:text-2xl  pt-2 '><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-</svg>
-</Link>
-        <Link to='/about' className='hover:text-blue-500 lg:text-2xl lg:pt-0 pt-2'>About</Link>
-        <Link to='/contact' className='hover:text-blue-500 lg:text-2xl lg:pt-0 pt-2'>Contact</Link>
-
-        <div className="flex flex-row">
-        <Like onLike={handleLike} />
-        {showThankYou && <p className=" lg:text-3xl lg:pt-0 pt-2">🤝</p>}
-        <FallingHearts showHearts={showHearts} />
-        </div>
+    <header className="sticky top-2 z-50 w-full px-4 lg:px-16">
+      <nav className="backdrop-blur-lg border border-cyan-800 rounded-3xl p-3 shadow-lg flex flex-wrap items-center justify-between">
         
-        <button  className='btn2 px-2' onClick={toggleTheme}> {theme === "dark" ? "Light☀️" : "Dark🌙"} </button>
-         
-      
+        {/* Left: Profile */}
+        <Link to="/" className="flex items-center flex-shrink-0">
+          <img
+            src={profilephoto}
+            alt="profile"
+            className="w-11 h-11 rounded-full border-2 "
+          />
+        </Link>
+
+        {/* Hamburger Button for Mobile */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="lg:hidden text-2xl p-2 rounded-md hover:bg-purple-600 hover:text-white transition ml-auto"
+          aria-label="Toggle Menu"
+        >
+          {menuOpen ? '✖️' : '☰'}
+        </button>
+
+        {/* Navigation & Actions */}
+        <div
+          className={`flex flex-col lg:flex-row lg:items-center w-full lg:w-auto mt-3 lg:mt-0 gap-4 lg:gap-6
+            ${menuOpen ? 'block' : 'hidden'} lg:flex`}
+        >
+          {/* Navigation Links */}
+          <div className="flex flex-col lg:flex-row lg:gap-6 gap-2 font-semibold text-lg lg:text-xl text-end">
+            <Link
+              to="/"
+              onClick={() => setMenuOpen(false)}
+              className="hover:text-blue-500 transition"
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => setMenuOpen(false)}
+              className="hover:text-blue-500 transition"
+            >
+              About
+            </Link>
+            <Link
+              to="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="hover:text-blue-500 transition"
+            >
+              Contact
+            </Link>
+          </div>
+
+          {/* Like & Theme Toggle */}
+          <div className="flex items-center gap-4 mt-2 lg:mt-0 ">
+            <button
+              onClick={handleLike}
+              className="text-xl hover:text-red-500 transition transform hover:scale-110"
+              aria-label="Like"
+            >
+              ❤️
+            </button>
+
+            {showThankYou && (
+              <span className="text-green-600 text-md animate-bounce select-none">
+                Thanks! ❤️
+              </span>
+            )}
+
+            <button
+              onClick={toggleTheme}
+              className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white px-3 py-1 rounded-full shadow hover:shadow-md transition text-sm whitespace-nowrap"
+              aria-label="Toggle Theme"
+            >
+              {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+            </button>
+          </div>
+        </div>
       </nav>
-    </div>
-    
-    
-    </>
-  )
+    </header>
+  );
 }
 
-
-export default Header
-
-//<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-
+export default Header;

@@ -1,63 +1,80 @@
-import React from 'react'
-import pic from '../images/profilephoto.jpg'
-import { motion } from 'framer-motion'
-import Certificates from '../components/Certificates'
-import Projects from '../components/Projects'
-
+import React from "react";
+import pic from "../images/profilephoto.jpg";
+import { motion } from "framer-motion";
+import Certificates from "../components/Certificates";
+import Projects from "../components/Projects";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate=useNavigate();
   return (
-    <div className='flex flex-col gap-15 lg:mt-10 mt-32 lg:p-10'>
-    <motion.div
-  whileHover={{opacity:1, scale: 1.05 }}
-  initial={{ opacity: 0, y: 50 }}
-  whileInView={{ opacity: 0.8, y: 0 }}
-  transition={{ duration: 1 }}
-  viewport={{ once: true }}
-  className=" flex items-center justify-center rounded-xl ">
-    <div className=' menu ml-1/4 p-5 flex-1  rounded-3xl shadow-xl shadow-amber-200 hover:shadow-2xl hover:shadow-purple-500 text-white '>
-    <p className='text-5xl text-purple-500 '>hire me.... </p>
-    <div className='flex md:flex-col flex-col lg:flex-row-reverse  gap-1 '>
-    <div className='m-1 '>
-        <img src={pic} alt='photo' className='rounded-full lg:h-50 lg:w-160  w-50 h-50' />
-      </div>
-      <div>
-        
-        <p className='p-4 m-2 text-2xl '>Hello! I'm Nazeer, a passionate and motivated <span className='text-red-500 text-3xl font-bold'>Full Stack Java Developer </span>with a background in Computer Science and Engineering (CSE). 
-        I graduated in 2024, and now I’m excited to dive into the tech world, 
-         bringing my skills and enthusiasm for building innovative software solutions.</p><br/>
-      </div>
-    
-    </div>
-    
-    </div>
-    </motion.div>
+    <div className="flex flex-col gap-20 lg:mt-10 mt-32 lg:px-16 px-4">
+      {/* Hero Section */}
       <motion.div
-      whileHover={{opacity:1, scale: 1.05 }}
-        initial={{ opacity: 0, y: 100 }}
+        whileHover={{ opacity: 1, scale: 1.02 }}
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className=" flex items-center justify-center rounded-xl lg:m-4"
+        className="menu flex flex-col-reverse lg:flex-row items-center justify-between rounded-3xl p-8 shadow-xl shadow-amber-200 hover:shadow-purple-500 transition-all duration-300"
       >
-        <Certificates/>
-      </motion.div>
-      <motion.div
-        whileHover={{opacity:1, scale: 1.05 }}
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-        className=" flex items-center justify-center rounded-xl lg:m-4"
-      >
-        <Projects/>
-      </motion.div>
-    </div>
+        {/* Text Section */}
+        <div className="flex-1 space-y-6">
+          <h1 className="text-5xl font-bold text-purple-500">Hire Me...</h1>
+          <p className="text-xl leading-relaxed">
+            Hello! I'm{" "}
+            <span className="font-semibold text-cyan-400">Nazeer</span>, a
+            passionate and driven{" "}
+            <span className="text-red-500 font-bold text-2xl">
+              Full Stack Java Developer
+            </span>{" "}
+            with a strong foundation in Computer Science and Engineering.
+            <br />I graduated in 2024 and am now eager to contribute to
+            real-world projects with creativity and dedication. I love building
+            modern web applications that solve meaningful problems.
+          </p>
+        </div>
 
-  )
+        {/* Profile Image */}
+        <div className="mb-6 lg:mb-0 lg:ml-8 flex-shrink-0">
+          <img
+            src={pic}
+            alt="Nazeer"
+            className="rounded-full shadow-md border-4 border-purple-400 lg:w-64 lg:h-64 w-48 h-48 object-cover"
+          />
+        </div>
+      </motion.div>
+
+      {/* Certificates Section */}
+      <motion.div
+        whileHover={{ opacity: 1, scale: 1.02 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="flex items-center justify-center"
+      >
+        <Certificates />
+      </motion.div>
+
+      {/* Projects Section */}
+      <motion.div
+        whileHover={{ opacity: 1, scale: 1.02 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="flex items-center justify-center"
+      >
+        <Projects />
+      </motion.div>
+      <div className="mt-6" onClick={()=>navigate('/contact')}>
+        <button className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-xl transition">
+          Contact Me
+        </button>
+      </div>
+    </div>
+  );
 }
 
-export default Home
-
-
-
+export default Home;

@@ -1,14 +1,24 @@
-:root{
-    --bg-color: #000000;
-    --text-color: rgb(255, 255, 255);
-  }
-  
-  [data-theme="dark"] {
-    --bg-color: #ffffff;
-    --text-color: rgb(0, 0, 0);
-  }
-  .menu{
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background 0.5s ease, color 0.5s ease;
-  }
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+[data-theme="dark"] {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+}
+
+.menu {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; 
+}
+
