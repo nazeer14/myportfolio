@@ -7,21 +7,21 @@ const certificates = [
     issuer: "Naresh IT",
     date: "January 2025",
     image: "null", 
-    link: "#", 
+    link: "", 
   },
   {
     title: "Web Developer",
     issuer: "N.S.D.C",
     date: "September 2024",
     image: "/certificate.jpeg",
-    link: "#",
+    link: "",
   },
   {
     title: "Full Stack Development",
     issuer: "Naresh iT",
     date: "March 2025",
     image: "null",
-    link: "#",
+    link: "",
   },
 ];
 
@@ -50,7 +50,7 @@ const Certificates = () => {
               <p className=" mb-4">Issued by: {cert.issuer}</p>
               <p className="">Date: {cert.date}</p>
               <a
-                href={cert.link}
+                //href={cert.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"

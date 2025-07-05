@@ -4,9 +4,9 @@ function Resume() {
   return (
     <div className="mt-4 flex justify-center px-4 sm:px-6 lg:px-0">
       <iframe
-        src="/NazeerShaik.pdf"
+        src="\NazeerShaik-Resume.pdf"
         title="Resume"
-        className="w-full max-w-4xl rounded-lg border border-gray-400 shadow-lg"
+        className="w-full max-w-4xl rounded-lg border bg-white dark:bg-gray-800 shadow-lg"
         style={{
           minHeight: '600px',
           height: '80vh',

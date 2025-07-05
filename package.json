@@ -29,6 +29,7 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.3.0",
     "react-social-icons": "^6.22.0",
+    "react-syntax-highlighter": "^15.6.1",
     "react-type-animation": "^3.2.0",
     "require": "^2.4.20",
     "tailwind-variants": "^1.0.0"

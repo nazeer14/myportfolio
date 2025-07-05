@@ -10,6 +10,7 @@ import github from '../images/github.jpeg';
 import jira from '../images/Jira-Symbol.png';
 import pm from '../images/postman-600на400.png';
 
+
 const skills = [
   { src: java, alt: 'Java SE' },
   { src: javaee, alt: 'Java EE' },
@@ -26,41 +27,50 @@ const tools = [
   { src: jira, alt: 'Jira' },
 ];
 
+
 function Skills() {
   return (
     <div className="m-4">
-      <div className="menu text-center text-3xl font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 py-3 rounded-2xl mb-6 shadow-md">
+      <h2 className="text-center text-2xl font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 py-3 rounded-2xl mb-6 shadow-md">
         Programming Languages & Frameworks
-      </div>
+      </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-        {skills.map((item, idx) => (
+        {skills.map((item) => (
           <div
-            key={idx}
-            className=" rounded-xl overflow-hidden shadow-md hover:shadow-xl transition transform hover:scale-105 p-2"
+            key={item.alt}
+            className="rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-transform hover:scale-105 p-2 text-white dark:bg-gray-900"
+            tabIndex={0}
+            aria-label={item.alt + " skill"}
           >
             <img
               src={item.src}
-              alt={item.alt}
-              className="w-full h-40 object-cover rounded-lg"
+              alt={item.alt + " logo"}
+              className="w-full h-40 object-contain rounded-lg"
+              title={item.alt}
+              loading="lazy"
             />
             <p className="text-center text-sm mt-2 font-medium">{item.alt}</p>
           </div>
         ))}
       </div>
 
-      <div className="menu text-center text-3xl font-semibold text-white bg-gradient-to-r from-pink-500 to-yellow-500 py-3 rounded-2xl mt-10 mb-6 shadow-md">
+      <h2 className="text-center text-3xl font-semibold text-white bg-gradient-to-r from-pink-500 to-yellow-500 py-3 rounded-2xl mt-10 mb-6 shadow-md">
         Tools
-      </div>
+      </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-        {tools.map((item, idx) => (
+        {tools.map((item) => (
           <div
-            key={idx}
-            className=" rounded-xl overflow-hidden shadow-md hover:shadow-xl transition transform hover:scale-105 p-2"
+            key={item.alt}
+            className="rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-transform hover:scale-105 p-2 text-white bg-white dark:bg-gray-900"
+            tabIndex={0}
+            aria-label={item.alt + " tool"}
           >
             <img
               src={item.src}
-              alt={item.alt}
-              className="w-full h-40 object-contain  rounded-lg"
+              alt={item.alt + " logo"}
+              className="w-full h-40 object-contain rounded-lg"
+              title={item.alt}
+              loading="lazy"
             />
             <p className="text-center text-sm mt-2 font-medium">{item.alt}</p>
           </div>
@@ -69,5 +79,6 @@ function Skills() {
     </div>
   );
 }
+
 
 export default Skills;

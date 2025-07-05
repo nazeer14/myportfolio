@@ -25,7 +25,7 @@ function Home() {
             Hello! I'm{" "}
             <span className="font-semibold text-cyan-400">Nazeer</span>, a
             passionate and driven{" "}
-            <span className="text-red-500 font-bold text-2xl">
+            <span className="text-pink-600 font-bold text-2xl">
               Full Stack Java Developer
             </span>{" "}
             with a strong foundation in Computer Science and Engineering.

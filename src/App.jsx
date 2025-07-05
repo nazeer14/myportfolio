@@ -10,7 +10,7 @@ import Education from "./components/Education";
 import Certificates from "./components/Certificates";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import Hobbies from "./components/Resume";
+import Resume from "./components/Resume";
 import PopupPage from "./pages/PopupPage";
 import OraAI from "./components/OraAI";
 
@@ -24,7 +24,7 @@ function App() {
     { to: "/skills", label: "Skills" },
     { to: "/projects", label: "Projects" },
     { to: "/certificates", label: "Certificates" },
-    { to: "/hobbies", label: "Resume" },
+    { to: "/resume", label: "Resume" },
     { to: "/oraai", label: "OraAI" },
   ];
 
@@ -145,7 +145,7 @@ function App() {
                   <Route path="/skills" element={<Skills />} />
                   <Route path="/projects" element={<Projects />} />
                   <Route path="/certificates" element={<Certificates />} />
-                  <Route path="/hobbies" element={<Hobbies />} />
+                  <Route path="/resume" element={<Resume />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/pup" element={<PopupPage />} />
