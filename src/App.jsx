@@ -11,7 +11,7 @@ import Certificates from "./components/Certificates";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Hobbies from "./components/Resume";
-import PopupPage from "./pages/popuppage";
+import PopupPage from "./pages/PopupPage";
 import OraAI from "./components/OraAI";
 
 function App() {
